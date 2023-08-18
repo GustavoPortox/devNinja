@@ -43,6 +43,9 @@ public class main {
             if (gabarito[i] == respostas[i]) {
                 nota += valorQuestao;
             }
+            else{
+                nota -= valorQuestao;
+            }
         }
         System.out.printf("Sua nota foi: %d. Parabens, voce foi aprovado!", nota);
     }
