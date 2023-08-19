@@ -38,15 +38,20 @@ public class main {
             resp = scan.nextLine().charAt(0);
             respostas[i] = resp;
         }
-        System.out.print("Fim da prova, confira o resultado!");
+        System.out.print("Fim da prova, confira o resultado!\n");
         for (int i = 0;i<numeroPerguntas;i++){
             if (gabarito[i] == respostas[i]) {
                 nota += valorQuestao;
             }
-            else{
-                nota -= valorQuestao;
+            else if(respostas[i] != gabarito[i]){
+                nota += 0;
             }
         }
-        System.out.printf("Sua nota foi: %d. Parabens, voce foi aprovado!", nota);
+        if(nota > 6){
+            System.out.printf("Sua nota foi: %d. Parabens, voce foi aprovado!", nota);
+        }
+        else{
+            System.out.printf("Infelizmente sua nota foi %d, voce foi reprovado.\nFoque nos estudos!", nota);
+        }
     }
 }
